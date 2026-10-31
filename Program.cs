@@ -17,30 +17,39 @@ while (isRunning)
     //Using string interpolation to implement the user's input into the output
     Console.WriteLine($"You entered: {menuChoice}");
 
-    if (menuChoice == "1")
+    switch (menuChoice)
     {
-        Console.WriteLine("Add a new hike selected!");
-    }
+        case "1":
 
-    else if (menuChoice == "2")
-    {
-        Console.WriteLine("View hiking journal selected!");
-    }
+            Console.WriteLine("---Add a New Hike---");
+            Console.WriteLine("Enter trail name:");
 
-    else if (menuChoice == "3")
-    {
-        Console.WriteLine("Search hikes selected!");
-    }
+            string? trailName = Console.ReadLine();
 
-    else if (menuChoice == "4")
-    {
-        Console.WriteLine("Goodbye!");
-        isRunning = false;
-    }
-    //Implementing some error handling in case a user inputs something invalid
-    else
-    {
-        Console.WriteLine("Invalid Option");
+            Console.WriteLine($"You enetered: {trailName}"); 
+            break;
+
+        case "2":
+
+            Console.WriteLine("View hiking journal selected!");
+            break;
+
+        case "3":
+
+            Console.WriteLine("Search hikes selected!");
+            break;
+
+        case "4":
+
+            Console.WriteLine("Goodbye!");
+            isRunning = false;
+            break;
+
+        //Implementing some error handling in case a user inputs something invalid
+        default:
+
+            Console.WriteLine("Invalid Option");
+            break;
 
     }
 }
